@@ -1,0 +1,46 @@
+/* CREATE TABLE Movies(
+	id INTEGER AUTO INCREMENT,
+	title TEXT,
+	MediaTypeId INTEGER FOREIGNKEY REFERENCES MediaType);
+ */
+/* INSERT INTO Movies (title, mediatypeid)
+	VALUES	("Beauty and the Beast", 3),
+    		("IT", 3),
+            ("Kingsmen", 3);
+     */
+     
+/* ALTER TABLE Movies 
+	ADD GenreId INTEGER FOREIGNKEY REFERENCES Genre; */
+    
+/* UPDATE Movies
+	SET GenreId = 24
+    WHERE title = "Kingsmen";
+ */
+ 
+/*  SELECT ar.name, a.title FROM Album a
+ 	JOIN Artist ar ON a.ArtistId = ar.ArtistId; */
+/*     
+SELECT tr.name, g.name FROM Track tr
+	JOIN Genre g ON tr.GenreId = g.GenreId
+    WHERE tr.GenreId IN (SELECT GenreId FROM Genre WHERE name = "Jazz" or name = "Blues") */
+ 
+/*  UPDATE employee
+ 	SET phone = "null"
+    WHERE EmployeeId = 1;
+     */
+/*      
+     SELECT * FROM customer 
+     WHERE company IS null; */
+     
+/*      SELECT ar.ArtistId, ar.name, COUNT(a.AlbumId) as total_albums 
+     FROM Artist ar
+     JOIN Album a ON a.ArtistID = ar.ArtistId
+     GROUP BY a.ArtistId
+     ORDER BY total_albums desc; */
+     
+/*      
+     DELETE FROM customer
+     WHERE fax IS null;
+     won't work b/c foreign key, but otherwise this does the trick
+      */
+      
